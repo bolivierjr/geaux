@@ -8,8 +8,10 @@ import (
 )
 
 // Get the full path of the template directory
-var _, filename, _, _ = runtime.Caller(0)
-var directory = filepath.Dir(filename)
+var (
+	_, filename, _, _ = runtime.Caller(0)
+	directory         = filepath.Dir(filename)
+)
 
 // Template struct that generates
 // model and controller templates
@@ -33,12 +35,11 @@ func (t *Template) CreateController() {
 
 // CreateTemplate is a helper function that creates a new template
 func CreateTemplate(file string, name string) string {
-	tmplPath := filepath.Join(directory, file)
-	tmpl := template.Must(template.ParseFiles(tmplPath))
+	tmplFile := filepath.Join(directory, file)
+	tmpl := template.Must(template.ParseFiles(tmplFile))
 
 	var tmplBytes bytes.Buffer
 	err := tmpl.Execute(&tmplBytes, name)
-
 	if err != nil {
 		panic(err)
 	}

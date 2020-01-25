@@ -1,12 +1,9 @@
 package main
 
 import (
-	"fmt"
-
-	t "github.com/bolivierjr/goapi/templates"
+	cmd "github.com/bolivierjr/goapi/cmd"
 )
 
 func main() {
-	tmplName := t.Template{Name: "Users"}
-	fmt.Println(tmplName.CreateModel())
+	cmd.Execute()
 }
