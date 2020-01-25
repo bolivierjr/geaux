@@ -17,6 +17,7 @@ Usage:
 
 Available Commands:
   model       Creates a new model template
+  project     Creates a new webapi project boilerplate structure
 
 Flags:
   -h, --help   help for new
@@ -30,6 +31,6 @@ Use "goapi new [command] --help" for more information about a command.
 	}
 
 	if expected != out {
-		t.Errorf("Expected:\n %v\n got:\n %v", expected, out)
+		t.Errorf("\nExpected:\n%v\ngot:\n%v", expected, out)
 	}
 }

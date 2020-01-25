@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"regexp"
 
 	"github.com/spf13/cobra"
 )
@@ -18,4 +19,12 @@ func Execute() {
 		fmt.Println(err)
 		os.Exit(1)
 	}
+}
+
+// CleanArg strips any whitespace from given argument from command.
+func CleanArg(arg string) string {
+	space := regexp.MustCompile(`\s+`)
+	arg = space.ReplaceAllString(arg, "")
+
+	return arg
 }

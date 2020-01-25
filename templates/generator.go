@@ -7,7 +7,7 @@ import (
 	"text/template"
 )
 
-// Get the full path of the template directory
+// Get the full path of the template directory.
 var (
 	_, filename, _, _ = runtime.Caller(0)
 	directory         = filepath.Dir(filename)
@@ -33,7 +33,7 @@ func (t *Template) CreateController() {
 
 }
 
-// CreateTemplate is a helper function that creates a new template
+// CreateTemplate is a helper function that creates a new template.
 func CreateTemplate(file string, name string) string {
 	tmplFile := filepath.Join(directory, file)
 	tmpl := template.Must(template.ParseFiles(tmplFile))

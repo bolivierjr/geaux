@@ -23,17 +23,17 @@ Flags:
 Use "goapi [command] --help" for more information about a command.
 `)
 
-	out := string(output)
 	if err != nil {
 		t.Errorf("Unexpected err: %v", err)
 	}
 
+	out := string(output)
 	if expected != out {
-		t.Errorf("Expected:\n %v\n got:\n %v", expected, out)
+		t.Errorf("\nExpected:\n%v\ngot:\n%v", expected, out)
 	}
 }
 
-func TestRootDummyCmd(t *testing.T) {
+func TestRootCmdError(t *testing.T) {
 	// Expect an error to occur
 	output, err := exec.Command("goapi", "dummy").Output()
 

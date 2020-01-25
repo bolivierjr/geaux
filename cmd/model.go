@@ -2,12 +2,11 @@ package cmd
 
 import (
 	"fmt"
-	"regexp"
 
 	"github.com/spf13/cobra"
 )
 
-// modelCmd represents the model subcommand.
+// modelCmd represents the `new model` command.
 var modelCmd = &cobra.Command{
 	Use:   "model",
 	Short: "Creates a new model template",
@@ -15,17 +14,16 @@ var modelCmd = &cobra.Command{
 For example:
   goapi new model Users`,
 	Args: cobra.ExactArgs(1),
-	Run:  Model,
+	Run:  NewModel,
 }
 
 func init() {
 	newCmd.AddCommand(modelCmd)
 }
 
-// Model will run when the model subcommand is executed.
-func Model(cmd *cobra.Command, args []string) {
+// NewModel will run when the `new model` subcommand is executed.
+func NewModel(cmd *cobra.Command, args []string) {
 	arg := args[0]
-	space := regexp.MustCompile(`\s+`)
-	arg = space.ReplaceAllString(arg, "")
-	fmt.Printf("Model called with %v\n", arg)
+	cleanArg := CleanArg(arg)
+	fmt.Printf("Model called with %v\n", cleanArg)
 }

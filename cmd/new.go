@@ -4,7 +4,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// newCmd represents the new command
+// newCmd represents the `new` command
 var newCmd = &cobra.Command{
 	Use:   "new",
 	Short: "Creates a new model, controller, or project",
