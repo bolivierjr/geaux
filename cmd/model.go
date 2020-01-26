@@ -12,7 +12,7 @@ var modelCmd = &cobra.Command{
 	Short: "Creates a new model template",
 	Long: `Creates a new model template and names it the given argument.
 For example:
-  goapi new model Users`,
+  geaux new model Users`,
 	Args: cobra.ExactArgs(1),
 	Run:  NewModel,
 }

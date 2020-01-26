@@ -6,14 +6,14 @@ import (
 )
 
 func TestNewCmd(t *testing.T) {
-	output, err := exec.Command("goapi", "new", "dummy").Output()
+	output, err := exec.Command("geaux", "new", "dummy").Output()
 
 	expected := (`Creates a new model template, controller template, or project and names it the given arguemnt.
 For example:
-  goapi new model Users
+  geaux new model Users
 
 Usage:
-  goapi new [command]
+  geaux new [command]
 
 Available Commands:
   model       Creates a new model template
@@ -22,7 +22,7 @@ Available Commands:
 Flags:
   -h, --help   help for new
 
-Use "goapi new [command] --help" for more information about a command.
+Use "geaux new [command] --help" for more information about a command.
 `)
 
 	out := string(output)

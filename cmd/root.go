@@ -9,7 +9,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "goapi",
+	Use:   "geaux",
 	Short: "A framework that creates a boilerplate api structure.",
 }
 

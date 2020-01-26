@@ -6,7 +6,7 @@ import (
 )
 
 func TestModelCmdError(t *testing.T) {
-	output, err := exec.Command("goapi", "new", "model").Output()
+	output, err := exec.Command("geaux", "new", "model").Output()
 
 	if err == nil {
 		t.Errorf("Unexpected output: %v", string(output))

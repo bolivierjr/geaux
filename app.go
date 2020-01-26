@@ -1,7 +1,7 @@
 package main
 
 import (
-	cmd "github.com/bolivierjr/goapi/cmd"
+	cmd "github.com/bolivierjr/geaux/cmd"
 )
 
 func main() {

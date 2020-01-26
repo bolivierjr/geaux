@@ -1,4 +1,4 @@
-module github.com/bolivierjr/goapi
+module github.com/bolivierjr/geaux
 
 go 1.13
 

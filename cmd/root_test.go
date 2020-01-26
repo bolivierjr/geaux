@@ -6,12 +6,12 @@ import (
 )
 
 func TestRootCmd(t *testing.T) {
-	output, err := exec.Command("goapi").Output()
+	output, err := exec.Command("geaux").Output()
 
 	expected := (`A framework that creates a boilerplate api structure.
 
 Usage:
-  goapi [command]
+  geaux [command]
 
 Available Commands:
   help        Help about any command
@@ -20,7 +20,7 @@ Available Commands:
 Flags:
   -h, --help   help for goapi
 
-Use "goapi [command] --help" for more information about a command.
+Use "geaux [command] --help" for more information about a command.
 `)
 
 	if err != nil {
@@ -40,5 +40,4 @@ func TestRootCmdError(t *testing.T) {
 	if err == nil {
 		t.Errorf("Unexpected output: %v", string(output))
 	}
-
 }

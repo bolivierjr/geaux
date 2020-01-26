@@ -14,7 +14,7 @@ var projectCmd = &cobra.Command{
 	Short: "Creates a new webapi project boilerplate structure",
 	Long: `Creates a new webapi project boilerplate structure and names the directory after the given argument.
 For example:
-  goapi new project webapi`,
+  geaux new project webapi`,
 	Args: cobra.ExactArgs(1),
 	Run:  NewProject,
 }

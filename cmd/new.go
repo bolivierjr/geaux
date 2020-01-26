@@ -10,7 +10,7 @@ var newCmd = &cobra.Command{
 	Short: "Creates a new model, controller, or project",
 	Long: `Creates a new model template, controller template, or project and names it the given arguemnt.
 For example:
-  goapi new model Users`,
+  geaux new model Users`,
 }
 
 func init() {
