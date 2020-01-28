@@ -18,7 +18,7 @@ Available Commands:
   new         Creates a new model, controller, or project
 
 Flags:
-  -h, --help   help for goapi
+  -h, --help   help for geaux
 
 Use "geaux [command] --help" for more information about a command.
 `)

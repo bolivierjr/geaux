@@ -5,6 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
+	_ "github.com/bolivierjr/geaux/internal/templates"
+	fs "github.com/bolivierjr/geaux/pkg/fs"
 	"github.com/spf13/cobra"
 )
 
@@ -32,10 +34,8 @@ func NewProject(cmd *cobra.Command, args []string) {
 	currentDir, _ := os.Getwd()
 	newPath := filepath.Join(currentDir, arg)
 
-	// Check if directory already exists before creating a new project
-	if _, err := os.Stat(newPath); os.IsNotExist(err) {
-		os.Mkdir(newPath, 0755)
-	} else {
+	// Create a new root project directory
+	if ok := fs.MakeDir(newPath); !ok {
 		fmt.Println("Directory already exists.")
 		os.Exit(1)
 	}
