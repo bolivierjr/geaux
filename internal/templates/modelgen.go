@@ -1,4 +1,4 @@
-package internal
+package templates
 
 import (
 	"bytes"
@@ -13,24 +13,22 @@ var (
 	directory         = filepath.Dir(filename)
 )
 
-// Template struct that generates
-// model and controller templates
-// wtih given name.
-type Template struct {
+// ModelTemplate struct that generates
+// a model templates wtih given name.
+type ModelTemplate struct {
 	Name string
+}
+
+// NewModel initializes a ModelTemplate.
+func NewModel(name string) ModelTemplate {
+	return ModelTemplate{Name: name}
 }
 
 // CreateModel will create a new model template
 // and stick it in the models directory.
-func (t Template) CreateModel() string {
+func (t ModelTemplate) CreateModel() string {
 	model := CreateTemplate("model.tmpl", t.Name)
 	return model
-}
-
-// CreateController will create a new controller
-// template and stick it in the controllers directory.
-func (t *Template) CreateController() {
-
 }
 
 // CreateTemplate is a helper function that creates a new template.
