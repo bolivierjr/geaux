@@ -1,5 +1,5 @@
 module github.com/bolivierjr/geaux
 
-go 1.13
+go 1.14
 
-require github.com/spf13/cobra v0.0.5
+require github.com/spf13/cobra v1.0.0
